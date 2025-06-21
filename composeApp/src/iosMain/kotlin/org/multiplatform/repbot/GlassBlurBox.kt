@@ -3,12 +3,14 @@ package org.multiplatform.repbot
 import androidx.compose.foundation.layout.Box
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.viewinterop.UIKitView
 import platform.UIKit.*
 
 @Composable
 actual fun GlassBlurBox(
     modifier: Modifier,
+    cornerRadius: Dp,
     content: @Composable () -> Unit
 ) {
     Box(modifier = modifier) {

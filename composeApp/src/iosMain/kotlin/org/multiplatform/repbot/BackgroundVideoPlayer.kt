@@ -17,6 +17,9 @@ actual fun BackgroundVideoPlayer(videoAssetName: String) {
         name = videoAssetName.substringBeforeLast("."),
         withExtension = "mp4"
     )
+
+    if(url == null)
+        return
     val player = remember {
         AVPlayer.playerWithURL(url!!).apply {
             actionAtItemEnd = AVPlayerActionAtItemEndNone
@@ -33,15 +36,17 @@ actual fun BackgroundVideoPlayer(videoAssetName: String) {
     UIKitView(
         factory = {
             UIView().apply {
-                layer.addSublayer(playerLayer)
                 backgroundColor = UIColor.blackColor
+                layer.addSublayer(playerLayer)
             }
         },
         modifier = Modifier.fillMaxSize(),
         update = { view ->
             playerLayer.frame = view.bounds
+            playerLayer.setNeedsDisplay()
         }
     )
+
 
     LaunchedEffect(player) {
         NSNotificationCenter.defaultCenter.addObserverForName(

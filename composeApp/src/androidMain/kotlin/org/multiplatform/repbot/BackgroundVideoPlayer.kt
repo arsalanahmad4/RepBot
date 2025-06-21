@@ -11,6 +11,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
+import androidx.compose.ui.zIndex
 import androidx.media3.common.MediaItem
 import androidx.media3.common.util.UnstableApi
 import androidx.media3.datasource.AssetDataSource
@@ -50,10 +51,14 @@ actual fun BackgroundVideoPlayer(videoAssetName: String) {
                 player = exoPlayer
                 layoutParams = ViewGroup.LayoutParams(MATCH_PARENT, MATCH_PARENT)
                 useController = false
+                resizeMode = AspectRatioFrameLayout.RESIZE_MODE_ZOOM // or RESIZE_MODE_FILL
             }
         },
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier
+            .fillMaxSize()
+            .zIndex(0f)
     )
+
 
     DisposableEffect(Unit) {
         onDispose { exoPlayer.release() }
