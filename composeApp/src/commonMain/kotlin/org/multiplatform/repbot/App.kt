@@ -8,8 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.wrapContentHeight
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -74,7 +72,7 @@ fun LoopingVideoScreen() {
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
                         Text(
-                            text = "Welcome to Fitbot",
+                            text = "Zorq Fitness",
                             color = Color.White,
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
@@ -82,7 +80,7 @@ fun LoopingVideoScreen() {
                         )
                         Spacer(modifier = Modifier.height(12.dp))
                         Text(
-                            text = "Your Personal AI Fitness Coach",
+                            text = "A blend of \"zest\" and \"torque\" for energy-driven workouts.",
                             color = Color.White.copy(alpha = 0.8f),
                             fontWeight = FontWeight.SemiBold,
                             fontSize = 16.sp,
@@ -90,7 +88,7 @@ fun LoopingVideoScreen() {
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
-                            text = "Fitbot is an AI-powered gym and fitness app that eliminates the need for personal trainers. Designed to understand your goals, adapt to your progress, and guide you through customised workout plans, Fitbot gets you closer to your fitness target — faster, smarter, and without the guesswork.",
+                            text = "Zorq Fitness is an AI-powered gym and fitness app that eliminates the need for personal trainers. Designed to understand your goals, adapt to your progress, and guide you through customised workout plans, Zorq gets you closer to your fitness target — faster, smarter, and without the guesswork.",
                             color = Color.White.copy(alpha = 0.8f),
                             fontWeight = FontWeight.Medium,
                             fontSize = 16.sp,
